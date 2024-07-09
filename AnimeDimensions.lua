@@ -1,6 +1,4 @@
 repeat wait() until game:IsLoaded()
-if shared.Wave then return 
-end
 if game.PlaceId == 6938803436 or game.PlaceId == 6990129309 or game.PlaceId == 6990133340 or game.PlaceId == 6990131029 or game.PlaceId == 7338881230 or game.PlaceId == 7274690025 then
     if game.PlaceId == 6938803436 or game.PlaceId == 7274690025 then
         repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui.MainGui.CenterUIFrame.PlayFrame.Frame.PlayRoomFrame.MapSelectionScrollingFrame:FindFirstChildOfClass("ImageButton")
@@ -19,7 +17,8 @@ if game.PlaceId == 6938803436 or game.PlaceId == 6990129309 or game.PlaceId == 6
             end
         end
     end
-    
+    if shared.Wave then return 
+	end
     local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/stophhtpspybro/Obfuscate/main/GUI56.lua"))()
     local Window = library:CreateWindow("SLH Hub Modified| ".."AnimeDimensions".." | LastestUpdate: July 10, 2024")
     local Tab1 = Window:CreateTab("Main")
@@ -1030,6 +1029,7 @@ game:GetService("ReplicatedStorage").RemoteFunctions.MainRemoteFunction:InvokeSe
             prompt.HoldDuration = 0
         end)
 	end)
+	shared.Wave = true
     spawn(function()
     pcall(function()
         while task.wait() do
