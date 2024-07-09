@@ -17,7 +17,10 @@ if game.PlaceId == 6938803436 or game.PlaceId == 6990129309 or game.PlaceId == 6
             end
         end
     end
-    if shared.Wave then return 
+    if shared.Wave then 
+		return 
+	else
+		                                                                                                                                    shared.Wave = true
 	end
     local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/stophhtpspybro/Obfuscate/main/GUI56.lua"))()
     local Window = library:CreateWindow("SLH Hub Modified| ".."AnimeDimensions".." | LastestUpdate: July 10, 2024")
