@@ -1,4 +1,5 @@
 repeat wait() until game:IsLoaded()
+task.wait(.5)
 if game.PlaceId == 6938803436 or game.PlaceId == 6990129309 or game.PlaceId == 6990133340 or game.PlaceId == 6990131029 or game.PlaceId == 7338881230 or game.PlaceId == 7274690025 then
     if game.PlaceId == 6938803436 or game.PlaceId == 7274690025 then
         repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui.MainGui.CenterUIFrame.PlayFrame.Frame.PlayRoomFrame.MapSelectionScrollingFrame:FindFirstChildOfClass("ImageButton")
