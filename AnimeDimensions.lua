@@ -1,5 +1,4 @@
 repeat wait() until game:IsLoaded()
-task.wait(.5)
 if game.PlaceId == 6938803436 or game.PlaceId == 6990129309 or game.PlaceId == 6990133340 or game.PlaceId == 6990131029 or game.PlaceId == 7338881230 or game.PlaceId == 7274690025 then
     if game.PlaceId == 6938803436 or game.PlaceId == 7274690025 then
         repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui.MainGui.CenterUIFrame.PlayFrame.Frame.PlayRoomFrame.MapSelectionScrollingFrame:FindFirstChildOfClass("ImageButton")
@@ -18,11 +17,7 @@ if game.PlaceId == 6938803436 or game.PlaceId == 6990129309 or game.PlaceId == 6
             end
         end
     end
-    if shared.Wave then 
-		return 
-	else
-		                                                                                                                                    shared.Wave = true
-	end
+    
     local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/stophhtpspybro/Obfuscate/main/GUI56.lua"))()
     local Window = library:CreateWindow("SLH Hub Modified| ".."AnimeDimensions".." | LastestUpdate: July 10, 2024")
     local Tab1 = Window:CreateTab("Main")
@@ -1021,6 +1016,7 @@ game:GetService("ReplicatedStorage").RemoteFunctions.MainRemoteFunction:InvokeSe
 	Setting1:AddButton("HopServer" , function()
 	    local v0=game.PlaceId;local v1={};local v2="";local v3=os.date("!*t").hour;local v4=false;local v5=pcall(function()v1=game:GetService("HttpService"):JSONDecode(readfile("NotSameServers.json"));end);if  not v5 then table.insert(v1,v3);writefile("NotSameServers.json",game:GetService("HttpService"):JSONEncode(v1));end function TPReturner()local v6;if (v2=="") then v6=game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"   .. v0   .. "/servers/Public?sortOrder=Asc&limit=100" ));else v6=game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"   .. v0   .. "/servers/Public?sortOrder=Asc&limit=100&cursor="   .. v2 ));end local v7="";if (v6.nextPageCursor and (v6.nextPageCursor~="null") and (v6.nextPageCursor~=nil)) then v2=v6.nextPageCursor;end local v8=0;for v9,v10 in pairs(v6.data) do local v11=true;v7=tostring(v10.id);if (tonumber(v10.maxPlayers)>tonumber(v10.playing)) then for v13,v14 in pairs(v1) do if (v8~=0) then if (v7==tostring(v14)) then v11=false;end elseif (tonumber(v3)~=tonumber(v14)) then local v15=pcall(function()delfile("NotSameServers.json");v1={};table.insert(v1,v3);end);end v8=v8 + 1 ;end if (v11==true) then table.insert(v1,v7);wait();pcall(function()writefile("NotSameServers.json",game:GetService("HttpService"):JSONEncode(v1));wait();game:GetService("TeleportService"):TeleportToPlaceInstance(v0,v7,game.Players.LocalPlayer);end);wait(4);end end end end function Teleport()while wait() do pcall(function()TPReturner();if (v2~="") then TPReturner();end end);end end Teleport();
 	end)
+	
 	Setting1:AddButton("FireProximityPrompt" , function()
         for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
             if v:IsA("ProximityPrompt") then
@@ -1032,7 +1028,7 @@ game:GetService("ReplicatedStorage").RemoteFunctions.MainRemoteFunction:InvokeSe
         game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function(prompt)
             prompt.HoldDuration = 0
         end)
-		end)
+	end)
     spawn(function()
     pcall(function()
         while task.wait() do
@@ -1152,7 +1148,6 @@ game:GetService("ReplicatedStorage").RemoteFunctions.MainRemoteFunction:InvokeSe
 		game:GetService("VirtualUser"):ClickButton2(Vector2.new())
 	end)
     ClickTP()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/stophhtpspybro/Obfuscate/main/_G.Function.lua"))()
 	library:ConfigSystem("AnimeDimensions"):Load()
     while wait(1) do
     	pcall(function()
@@ -1160,3 +1155,4 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/stophhtpspybro/Obfusc
     	end)
 	end
 end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/stophhtpspybro/Obfuscate/main/_G.Function.lua"))()
